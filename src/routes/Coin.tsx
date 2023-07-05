@@ -10,6 +10,7 @@ import { styled } from "styled-components";
 import { useQuery } from "react-query";
 import { fetchCoinInfo, fetchCoinTickers } from "../api";
 import { Helmet } from "react-helmet";
+import { log } from "util";
 
 interface IInfoData {
   id: string;
@@ -136,6 +137,7 @@ const Back = styled.div`
 
 function Coin() {
   const { coinId } = useParams();
+  console.log(coinId);
   const { state } = useLocation();
   const priceMatch = useMatch(":coinId/price");
   const chartMatch = useMatch(":coinId/chart");
